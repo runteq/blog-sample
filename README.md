@@ -128,6 +128,37 @@ http://localhost:3000 でアクセス
 
 ## デプロイ（Render + Neon）
 
+### アーキテクチャ
+
+```mermaid
+flowchart LR
+    subgraph Users["ユーザー"]
+        Browser["ブラウザ"]
+    end
+
+    subgraph Render["Render (アプリケーション)"]
+        Rails["Rails 7.1\n+ Puma"]
+    end
+
+    subgraph Neon["Neon (データベース)"]
+        PostgreSQL["PostgreSQL"]
+    end
+
+    subgraph GitHub["GitHub"]
+        Repo["リポジトリ"]
+    end
+
+    Browser -->|HTTPS| Rails
+    Rails -->|DATABASE_URL| PostgreSQL
+    Repo -->|自動デプロイ| Rails
+```
+
+| サービス | 役割 | 料金 |
+|---------|------|------|
+| **Render** | Railsアプリのホスティング | Free（750時間/月） |
+| **Neon** | PostgreSQLデータベース | Free（0.5GB） |
+| **GitHub** | ソースコード管理・自動デプロイ連携 | Free |
+
 ### デプロイ用ファイル（コピペOK）
 
 #### bin/render-build.sh
