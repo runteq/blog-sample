@@ -197,23 +197,32 @@ config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present? || 
 
 1. [Render](https://render.com) でアカウント作成
 2. 「New +」→「Web Service」を選択
-3. GitHubリポジトリを接続
-4. 以下を設定：
-   - **Name**: runtekun-blog（任意）
-   - **Runtime**: Ruby
-   - **Build Command**: `./bin/render-build.sh`
-   - **Start Command**: `bundle exec puma -C config/puma.rb`
+3. 「Build and deploy from a Git repository」→「Next」
+4. GitHubリポジトリを接続（Connect GitHub）
+5. 対象リポジトリの「Connect」をクリック
 
-5. 環境変数を設定：
+6. 以下を設定：
+
+| 項目 | 値 |
+|------|-----|
+| **Name** | runtekun-blog（任意） |
+| **Region** | Singapore (Southeast Asia) など |
+| **Branch** | main |
+| **Language** | Ruby |
+| **Build Command** | `./bin/render-build.sh` |
+| **Start Command** | `bundle exec puma -C config/puma.rb` |
+| **Instance Type** | Free |
+
+7. 「Environment Variables」セクションで「Add Environment Variable」をクリックし、以下を追加：
 
 | Key | Value |
 |-----|-------|
-| `DATABASE_URL` | Neonの接続文字列 |
+| `DATABASE_URL` | Neonの接続文字列（`postgres://...`） |
 | `RAILS_MASTER_KEY` | `config/master.key`の内容 |
-| `BLOG_USER` | 管理画面のユーザー名 |
-| `BLOG_PASSWORD` | 管理画面のパスワード |
+| `BLOG_USER` | 管理画面のユーザー名（任意） |
+| `BLOG_PASSWORD` | 管理画面のパスワード（任意） |
 
-6. 「Create Web Service」をクリック
+8. 「Create Web Service」をクリック
 
 ### Blueprint（自動デプロイ）
 
