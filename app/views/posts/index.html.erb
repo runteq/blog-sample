@@ -1,0 +1,20 @@
+<div class="max-w-4xl mx-auto">
+  <% if @posts.any? %>
+    <div class="space-y-6">
+      <% @posts.each do |post| %>
+        <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+          <h2 class="text-xl font-semibold text-gray-900">
+            <%= link_to post.title, post, class: "hover:text-blue-600 transition" %>
+          </h2>
+          <p class="text-gray-600 text-sm mt-2">
+            <%= post.published_at&.strftime("%Y年%m月%d日 %H:%M") %>
+          </p>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="bg-gray-100 rounded-lg p-8 text-center">
+      <p class="text-gray-600">まだ記事がありません</p>
+    </div>
+  <% end %>
+</div>

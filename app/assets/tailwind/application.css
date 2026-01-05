@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Markdown styles */
+.prose {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-6 mb-3 text-gray-900;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-5 mb-2 text-gray-900;
+}
+
+.prose h4 {
+  @apply text-lg font-bold mt-4 mb-2 text-gray-900;
+}
+
+.prose p {
+  @apply my-4;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.prose strong {
+  @apply font-bold text-gray-900;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose ul {
+  @apply my-4 pl-6 list-disc;
+}
+
+.prose ol {
+  @apply my-4 pl-6 list-decimal;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+.prose blockquote {
+  @apply my-4 pl-4 border-l-4 border-gray-300 text-gray-600 italic;
+}
+
+.prose code {
+  @apply bg-gray-100 text-red-600 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply my-4 p-4 bg-gray-800 text-gray-100 rounded-lg overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+.prose table {
+  @apply my-4 w-full border-collapse;
+}
+
+.prose th {
+  @apply border border-gray-300 bg-gray-100 px-4 py-2 text-left font-bold;
+}
+
+.prose td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.prose hr {
+  @apply my-8 border-t border-gray-300;
+}
+
+.prose img {
+  @apply my-4 rounded-lg max-w-full;
+}
+
+.prose del {
+  @apply line-through text-gray-500;
+}
+
+.prose mark {
+  @apply bg-yellow-200 px-1;
+}

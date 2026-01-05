@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>らんてくんプロフィール</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-slate-100 min-h-screen flex flex-col">
+    <%= render "shared/header", title: "プロフィール" %>
+
+    <main class="flex-grow">
+      <%= yield %>
+    </main>
+
+    <footer class="text-center text-lg font-bold text-stone-500 py-4">
+      <%= link_to "← ブログに戻る", root_path, class: "text-sky-600 hover:text-sky-800 mr-4" %>
+      ©︎ 2024 RUNTEQ
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<header class="bg-sky-900 px-6 py-4">
+  <div class="max-w-4xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-white">
+      <%= link_to title, root_path, class: "hover:text-sky-200 transition" %>
+    </h1>
+    <% if defined?(show_admin_link) && show_admin_link %>
+      <%= link_to "管理画面 →", admin_posts_path, class: "text-sky-200 hover:text-white text-sm transition" %>
+    <% elsif defined?(show_public_link) && show_public_link %>
+      <%= link_to "公開サイト →", root_path, class: "text-sky-200 hover:text-white text-sm transition" %>
+    <% end %>
+  </div>
+</header>

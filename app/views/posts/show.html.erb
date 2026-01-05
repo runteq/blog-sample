@@ -1,0 +1,15 @@
+<div class="max-w-4xl mx-auto">
+  <div class="mb-6">
+    <%= link_to "← 一覧に戻る", posts_path, class: "text-blue-600 hover:text-blue-800 transition" %>
+  </div>
+
+  <article class="bg-white rounded-lg shadow-md p-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-4"><%= @post.title %></h1>
+    <p class="text-gray-600 text-sm mb-6 pb-6 border-b border-gray-200">
+      <%= @post.published_at&.strftime("%Y年%m月%d日 %H:%M") %>
+    </p>
+    <div class="prose max-w-none">
+      <%= markdown(@post.content) %>
+    </div>
+  </article>
+</div>
